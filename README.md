@@ -6,8 +6,13 @@ Unofficial build of Firefox 36 running within a docker container and rendered by
 Changelog
 ---------
 ```
+v1.4
+* Automatic bookmark population by host mounting additional config.
+  I have included the sample config in my [GitHub](https://github.com/chrisdaish/docker-firefox/tree/master/configFiles).
+
 v1.3
 * Added (Oracle) Java support.
+* Additional configuration files can now be mounted inside the container (see example below).
 
 v1.2
 * Added audio passthrough, however this requires the --privileged argument to be set. This should be used with caution.
@@ -22,7 +27,11 @@ v1.0
 Launch Command
 ---------------
 ```
-docker run -v $HOME/Downloads:/home/firefox/Downloads:rw -v /tmp/.X11-unix:/tmp/.X11-unix -v /dev/snd:/dev/snd --privileged -e uid=$(id -u) -e gid=$(id -g) -e DISPLAY=unix$DISPLAY --name firefox -i -t chrisdaish/firefox
+docker run -v $HOME/Downloads:/home/firefox/Downloads:rw -v /tmp/.X11-unix:/tmp/.X11-unix -v /dev/snd:/dev/snd --privileged -e uid=$(id -u) -e gid=$(id -g) -e DISPLAY=unix$DISPLAY --name firefox chrisdaish/firefox
+```
+Additional config example:
+```
+docker run -v $HOME/<pathToConfigFiles>/bookmarks.json:/home/firefox/.mozilla/firefox/bookmarkbackups/bookmarks-2015-03-30.json:ro -v $HOME/<pathToConfigFiles>/mozilla.cfg:/usr/lib/firefox/mozilla.cfg:ro -v $HOME/<pathToConfigFiles>/local-settings.js:/usr/lib/firefox/defaults/pref/local-settings.js:ro -v $HOME/Downloads:/home/firefox/Downloads:rw -v /tmp/.X11-unix:/tmp/.X11-unix -v /dev/snd:/dev/snd --privileged -e uid=$(id -u) -e gid=$(id -g) -e DISPLAY=unix$DISPLAY --name firefox chrisdaish/firefox
 ```
 
 FAQ
