@@ -1,11 +1,14 @@
 Firefox
 =======
 
-Unofficial build of Firefox 36 running within a docker container and rendered by the local X Server.
+Unofficial build of Firefox 37 running within a docker container and rendered by the local X Server.
 
 Changelog
 ---------
 ```
+v1.5
+* Firefox 36 upgraded to 37.
+
 v1.4
 * Automatic bookmark population by host mounting additional config.
   I have included the sample config in my [GitHub](https://github.com/chrisdaish/docker-firefox/tree/master/configFiles).
