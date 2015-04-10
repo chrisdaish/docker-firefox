@@ -6,6 +6,9 @@ Unofficial build of Firefox 37 running within a docker container and rendered by
 Changelog
 ---------
 ```
+v1.6
+* Optional environment variables 'ARGS' and 'URL' can now be passed into the container. For example: -e ARGS=-jsconsole -e URL=http://www.docker.com
+
 v1.5
 * Firefox 36 upgraded to 37.
 
@@ -34,7 +37,7 @@ docker run -v $HOME/Downloads:/home/firefox/Downloads:rw -v /tmp/.X11-unix:/tmp/
 ```
 Additional config example:
 ```
-docker run -v $HOME/<pathToConfigFiles>/bookmarks.json:/home/firefox/.mozilla/firefox/bookmarkbackups/bookmarks-2015-03-30.json:ro -v $HOME/<pathToConfigFiles>/mozilla.cfg:/usr/lib/firefox/mozilla.cfg:ro -v $HOME/<pathToConfigFiles>/local-settings.js:/usr/lib/firefox/defaults/pref/local-settings.js:ro -v $HOME/Downloads:/home/firefox/Downloads:rw -v /tmp/.X11-unix:/tmp/.X11-unix -v /dev/snd:/dev/snd --privileged -e uid=$(id -u) -e gid=$(id -g) -e DISPLAY=unix$DISPLAY --name firefox chrisdaish/firefox
+docker run -v $HOME/<pathToConfigFiles>/bookmarks.json:/home/firefox/.mozilla/firefox/bookmarkbackups/bookmarks-2015-03-30.json:ro -v $HOME/<pathToConfigFiles>/mozilla.cfg:/usr/lib/firefox/mozilla.cfg:ro -v $HOME/<pathToConfigFiles>/local-settings.js:/usr/lib/firefox/defaults/pref/local-settings.js:ro -v $HOME/Downloads:/home/firefox/Downloads:rw -v /tmp/.X11-unix:/tmp/.X11-unix -v /dev/snd:/dev/snd --privileged -e uid=$(id -u) -e gid=$(id -g) -e DISPLAY=unix$DISPLAY -e URL=http://www.docker.com --name firefox chrisdaish/firefox
 ```
 
 FAQ

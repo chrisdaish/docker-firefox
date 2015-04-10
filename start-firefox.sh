@@ -6,4 +6,4 @@ if [ -d /home/firefox/.mozilla ]; then
   chown -R firefox:firefox /home/firefox/.mozilla
 fi
 
-exec su -ls "/bin/bash" -c "/usr/bin/firefox -profile /home/firefox/.mozilla/firefox" firefox
+exec su -ls "/bin/bash" -c "/usr/bin/firefox -profile /home/firefox/.mozilla/firefox $ARGS $URL" firefox
