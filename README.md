@@ -1,7 +1,7 @@
 Firefox
 =======
 
-Unofficial build of Firefox 37 running within a docker container and rendered by the local X Server.
+Unofficial build of Firefox 38 running within a docker container and rendered by the local X Server.
 
 Changelog
 ---------
