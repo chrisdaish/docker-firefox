@@ -3,7 +3,7 @@ FROM ubuntu:14.04
 MAINTAINER Chris Daish <chrisdaish@gmail.com>
 
 ENV DEBIAN_FRONTEND noninteractive
-ENV FIREFOXVERSION 39.0.3+build2-0ubuntu0.14.04.1
+ENV FIREFOXVERSION 40.0.3+build1-0ubuntu0.14.04.1
 
 COPY AptSources /etc/apt/sources.list.d/
 
