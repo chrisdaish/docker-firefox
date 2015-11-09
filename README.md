@@ -1,11 +1,17 @@
 Firefox
 =======
 
-Unofficial build of Firefox 38 running within a docker container and rendered by the local X Server.
+Unofficial build of Firefox 42 running within a docker container and rendered by the local X Server.
 
 Changelog
 ---------
 ```
+v1.8
+* Version bumped to 42.
+
+v1.7
+* Version bumped to 41.
+
 v1.6
 * Optional environment variables 'ARGS' and 'URL' can now be passed into the container. For example: -e ARGS=-jsconsole -e URL=http://www.docker.com
 
@@ -38,7 +44,20 @@ docker run -v $HOME/Downloads:/home/firefox/Downloads:rw -v /tmp/.X11-unix:/tmp/
 Additional config example:
 
 ```
-docker run -v $HOME/<pathToConfigFiles>/xulstore.json:/home/firefox/.mozilla/firefox/xulstore.json:ro -v $HOME/<pathToConfigFiles>/bookmarks.json:/home/firefox/.mozilla/firefox/bookmarkbackups/bookmarks-2015-03-30.json:ro -v $HOME/<pathToConfigFiles>/mozilla.cfg:/usr/lib/firefox/mozilla.cfg:ro -v $HOME/<pathToConfigFiles>/local-settings.js:/usr/lib/firefox/defaults/pref/local-settings.js:ro -v $HOME/Downloads:/home/firefox/Downloads:rw -v /tmp/.X11-unix:/tmp/.X11-unix -v /dev/snd:/dev/snd --privileged -e uid=$(id -u) -e gid=$(id -g) -e DISPLAY=unix$DISPLAY -e URL=http://www.docker.com --name firefox chrisdaish/firefox
+docker run  -v $HOME/<pathToConfigFiles>/xulstore.json:/home/firefox/.mozilla/firefox/xulstore.json:ro \
+            -v $HOME/<pathToConfigFiles>/bookmarks.json:/home/firefox/.mozilla/firefox/bookmarkbackups/bookmarks-2015-03-30.json:ro \
+            -v $HOME/<pathToConfigFiles>/mozilla.cfg:/usr/lib/firefox/mozilla.cfg:ro \
+            -v $HOME/<pathToConfigFiles>/local-settings.js:/usr/lib/firefox/defaults/pref/local-settings.js:ro \
+            -v $HOME/Downloads:/home/firefox/Downloads:rw \
+            -v /tmp/.X11-unix:/tmp/.X11-unix \
+            -v /dev/snd:/dev/snd \
+            -e uid=$(id -u) \
+            -e gid=$(id -g) \
+            -e DISPLAY=unix$DISPLAY \
+            -e URL=http://www.docker.com \
+            --privileged \
+            --name firefox \
+            chrisdaish/firefox
 ```
 
 FAQ

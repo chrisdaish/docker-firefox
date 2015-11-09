@@ -1,11 +1,12 @@
-FROM ubuntu:14.04
+FROM ubuntu:14.04.3
 
 MAINTAINER Chris Daish <chrisdaish@gmail.com>
 
 ENV DEBIAN_FRONTEND noninteractive
-ENV FIREFOXVERSION 40.0.3+build1-0ubuntu0.14.04.1
 
 COPY AptSources /etc/apt/sources.list.d/
+
+ENV FIREFOXVERSION 42.0+build2-0ubuntu0.14.04.1
 
 RUN useradd -m firefox; \
     echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | debconf-set-selections; \
