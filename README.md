@@ -1,11 +1,14 @@
 Firefox
 =======
 
-Unofficial build of Firefox 42 running within a docker container and rendered by the local X Server.
+Unofficial build of Firefox 43 running within a docker container and rendered by the local X Server.
 
 Changelog
 ---------
 ```
+v1.9
+* Version bumped to 43
+
 v1.8
 * Version bumped to 42.
 
