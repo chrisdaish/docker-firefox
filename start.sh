@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ $# -gt 1 ]
+if [ $# -gt 0 ]
 then
   COMMAND=$1
   if [ "${COMMAND}" != "fresh" ]
